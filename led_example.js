@@ -41,19 +41,21 @@ replServer.context.on = function (color) {
 replServer.context.off = function (color) {
 	write(color, false);
 }
-/*
-replServer.context.blink = function (color, duration, times) {
+
+const. replServer.context.blink = function (color, duration, times) {
 	var isOn = false;
-	if (times == null) times = 4;
-	if (duration == null) duration = 1;
+	if (times == null)
+		times = 4;
+	if (duration == null) 
+		duration = 1;
 	for (var i = 0; i < times; i++) {
 		isOn = !isOn;
-                console.log("Current LED state: " + isOn);
+                console.log("Current LED state: " + isOn? "true" : "false");
 		write(color, isOn);
 		timer.sleep(duration);
 	}
 }
-*/
+
 replServer.context.quit = function () {
 	gpio.reset();
 	gpio.destroy(function (err) {
